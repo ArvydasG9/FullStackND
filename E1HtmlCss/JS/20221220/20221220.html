@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND 2022-12-20 JS įvykiai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+        }
+
+        table td {
+            display: flex;
+            justify-content: flex-start;
+            /* justify-content: space-between; */
+            margin: 5px;
+            border-radius: 10%;
+            background-color: white;
+            text-align: center;
+        }
+
+        table .cl div {
+            background-color: white;
+            padding: auto 50%;
+        }
+
+        p {
+            text-align: left;
+            margin: 0;
+        }
+
+        button {
+            width: 20%;
+            height: 36px;
+            margin: auto;
+        }
+
+        button img {
+            width: 100%;
+            height: auto;
+            margin: auto;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        div .container {
+            border-bottom: 1px solid blue;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(230, 251, 255);">
+    <div class="container">
+        <h1>2022-12-20 (įvykiai)</h1>
+        <div class="container" style="background-color: rgb(205, 221, 239);">
+            <h3 style="text-align: center;">(DOM Manipuliacija)</h3>
+            <div class="container"
+                style="display: flex; padding: 50px 0; flex-direction: column; align-items: stretch; margin: auto; width:250px;">
+                <div class="container" style="background-color:red;color: white;">
+                    <img src="https://picsum.photos/50/50?random=1" alt="foto"
+                        style="display: flex; border-radius: 10px; margin: auto; margin-top: 20px;">
+                    <p id="person" style="text-align: center; font-size: 27px; margin: 0 auto;">---</p>
+                    <p id="job" style="text-align: center; font-size: 14px; margin-top: auto;">---</p>
+                </div>
+                <div class="container" style="background-color: rgb(241, 241, 241); ">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../20221116a/img/1.png" alt="" style="width: 50px; height: 50px;">
+                                <div style="margin:0">
+                                    <p style="color: red;">Phone</p>
+                                    <p id="phone">---</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="../20221116a/img/1.png" alt="" style="width: 50px; height: 50px;">
+                                <div style="margin:0">
+                                    <p style="color: red;">Email Address</p>
+                                    <p id="email">---</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="../20221116a/img/1.png" alt="" style="width: 50px; height: 50px;">
+                                <div style="margin:0">
+                                    <p style="color: red;">Website</p>
+                                    <p id="web">---</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="../20221116a/img/1.png" alt="" style="width: 50px; height: 50px;">
+                                <div style="margin:0">
+                                    <p style="color: red;">City</p>
+                                    <p id="city">---</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="background-color: rgb(241, 241, 241);">
+                            <td class="cl" style="background-color: rgb(241, 241, 241);">
+                                <button>
+                                    <img src="../20221116a/img/1.png" alt="">
+                                </button>
+                                <button>
+                                    <img src="../20221116a/img/1.png" alt="">
+                                </button>
+                                <button>
+                                    <img src="../20221116a/img/1.png" alt="">
+                                </button>
+                                <button>
+                                    <img src="../20221116a/img/1.png" alt="">
+                                </button>
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="background-color: beige;">
+            <h1>Užduotis 2022-12-16</h1>
+            <h4>(Daugiamačiai masyvai)</h4>
+            <ol>
+                <li>
+                    Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 elementų su reikšmėmis nuo 5
+                    iki 25.
+                </li>
+                <li>
+                    Naudodamiesi 1 uždavinio masyvu:
+                    <pre>
+    a) Suskaičiuokite kiek masyve yra elementų didesnių už 10;
+    b) Raskite didžiausio elemento reikšmę;
+    c) Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
+    d) Visus antro lygio masyvus “pailginkite” iki 7 elementų
+    e) Suskaičiuokite kiekvieno iš antro lygio masyvų elementų sumą atskirai ir sumas panaudokite kaip reikšmes sukuriant naują masyvą.
+        T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, turinčio indeksą 0 dideliame masyve, visų elementų sumai 
+                    </pre>
+                </li>
+                <li>
+                    Sukurkite masyvą iš 10 elementų. Masyvo reikšmes užpildykite pagal taisyklę: generuokite skaičių nuo
+                    0 iki 5. Ir sukurkite tokio ilgio masyvą. Jeigu reikšmė yra 0 masyvo nekurkite. Antro lygio masyvo
+                    reikšmes papildykite atsitiktiniais skaičiais nuo 0 iki 10. Ten kur masyvo nėra įkelkite skaičių nuo
+                    0 iki 10.
+                </li>
+                <li>
+                    Paskaičiuokite 3 uždavinio masyvo visų reikšmių sumą ir išrūšiuokite masyvą taip, kad pirmiausiai
+                    eitų mažiausios masyvo reikšmės arba jeigu reikšmė yra masyvas, to masyvo reikšmių sumos.
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_1()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.1">
+                <div id="dn1216_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_2a()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.2a">
+                <div id="dn1216_2a" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_2b()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.2b">
+                <div id="dn1216_2b" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_2c()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.2c">
+                <div id="dn1216_2c" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_2d()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.2d">
+                <div id="dn1216_2d" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_2e()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.2e">
+                <div id="dn1216_2e" style="padding-left: 20px;"></div>
+            </div>
+
+
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_3()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.3">
+                <div id="dn1216_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1216_4()" type="button" name="vardas" value="ND 2022-12-16 masyvai Nr.4">
+                <div id="dn1216_4" style="padding-left: 20px;"></div>
+            </div>
+
+        </div>
+
+        <div class="container" style="background-color: beige;">
+            <h1>Užduotis 2022-12-14</h1>
+            <h4>(Masyvai))</h4>
+            <ol>
+                <li>
+                    Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25.
+                    Trečias,
+                    pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+                </li>
+                <li>
+                    Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu
+                    kiekiu
+                    nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z.
+                    Išrūšiuokite
+                    antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
+                </li>
+            </ol>
+
+            <h4>(Funkcijos))</h4>
+            <ol>
+                <li>
+                    Sukurkite funkciją kuri pakeltų paduotą skaičių n laipsniu, ir grąžintų reikšmę (perduodami du
+                    parametrai: skaičius ir laipsnis) </li>
+                <li>
+                    Parašykite funkciją, kurios argumentas būtų tekstas, kuris yra įterpiamas į h1 tagą. Rezultatą
+                    atvaizduokite naršyklėje.
+                </li>
+                <li>
+                    Parašykite funkciją su dviem argumentais, pirmas argumentas tekstas, įterpiamas į h tagą, o antrasis
+                    tago numeris (1-6). Rašydami šią funkciją remkitės pirmąjame uždavinyje parašyta funkcija
+                </li>
+                <li>
+                    Aprašykite funkciją kuri priimtų vieną parametrą "number" bei patikrintų ar duotas skaičius yra
+                    pirminis.
+                </li>
+                <li>
+                    Atgal grąžinkite teigiamą arba neigiamą (boolean) atsakymą.
+                </li>
+                <li>
+                    Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991.
+                </li>
+                <li>
+                    Pasinaudodami penktoje užduotyje aprašyta funkcija masyve palikite tik pirminius skaičius, kurie yra
+                    didesni nei 5000;
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214m_1()" type="button" name="vardas" value="ND 2022-12-14 masyvai Nr.1">
+                <div id="dn1214m_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214m_2()" type="button" name="vardas" value="ND 2022-12-14 masyvai Nr.2">
+                <div id="dn1214m_2" style="padding-left: 20px;"></div>
+            </div>
+
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214_1()" type="button" name="vardas" value="ND 2022-12-14 Nr.1">
+                <div id="dn1214_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214_2()" type="button" name="vardas" value="ND 2022-12-14 Nr.2">
+                <div id="dn1214_2" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214_3()" type="button" name="vardas" value="ND 2022-12-14 Nr.3">
+                <div id="dn1214_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214_4()" type="button" name="vardas" value="ND 2022-12-14 Nr.4, 5">
+                <div id="dn1214_4" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214_6()" type="button" name="vardas" value="ND 2022-12-14 Nr.6">
+                <div id="dn1214_6" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1214_7()" type="button" name="vardas" value="ND 2022-12-14 Nr.7">
+                <div id="dn1214_7" style="padding-left: 20px;"></div>
+            </div>
+
+        </div>
+
+        <div class="container" style="background-color: beige;">
+            <h1>Užduotis 2022-12-13</h1>
+            <ol>
+                <li>
+                    Sukurkite funkciją kuri priimtų parametrą "name". Jos tikslas atspausdinti naršyklėje tekstą
+                    "Labas," ir
+                    šalia jo perduotą vardą. Pvz "Labas, Elena".
+                </li>
+                <li>
+                    Sukurkite funkciją kuri priimtų vieną parametrą (tekstą) ir grąžintų atsakymą kiek simbolių yra tame
+                    tekste. Iš funkcijos gautą rezultatą atvaizduokite naršyklėje.
+                </li>
+                <li>
+                    Sukurkite funkciją kuri priimtų du parametrus "name" ir "last_name". Funkcija turi grąžinti vieną
+                    stringą, kuriame būtų vardas ir pavardė prasidedantys didžiosiomis raidėmis.
+                </li>
+                <li>
+                    Parašykite funkciją kuri sugeneruotų 3 random skaičius nuo 0 iki 5 ir atspausdintų koncolėje vienoje
+                    eilutėje atskirtus kableliais. Po paskutinio skaičiaus kablelio neturi būti.
+                </li>
+                <li>
+                    Parašykite funkciją kuri priimtų tris parametrus "from" ir "to" ir "limit". Patikrinkite ar šie
+                    perduodami parametrai yra skaičiai ir pagal juos sugeneruokite masyvą, kurio ilgį nusako "limit"
+                    parametras, o reikšmės from ir to nurodo atsitiktinį skaičių šiuose rėžiuose.
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1213_1()" type="button" name="vardas" value="ND 2022-12-13 Nr.1">
+                <div id="dn1213_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1213_2()" type="button" name="vardas" value="ND 2022-12-13 Nr.2">
+                <div id="dn1213_2" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1213_3()" type="button" name="vardas" value="ND 2022-12-13 Nr.3">
+                <div id="dn1213_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1213_4()" type="button" name="vardas" value="ND 2022-12-13 Nr.4">
+                <div id="dn1213_4" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1213_5()" type="button" name="vardas" value="ND 2022-12-13 Nr.5">
+                <div id="dn1213_5" style="padding-left: 20px;"></div>
+            </div>
+
+
+        </div>
+
+        <div class="container" style="background-color: beige;">
+            <h1>Užduotis 2022-12-09</h1>
+            <ol>
+                <li>
+                    Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite
+                    kiek
+                    yra kiekvienos raidės.
+                </li>
+                <li>
+                    Išrūšiuokite 1 uždavinio masyvą pagal abecėlę.
+                </li>
+                <li>
+                    Sugeneruokite 3 masyvus pagal 1 uždavinio sąlygą. Sudėkite masyvus, sudėdami reikšmes pagal
+                    atitinkamus
+                    indeksus. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių
+                    kombinacijų
+                    gavote. Pavyzdžiui:
+                    <pre>
+                    Unikalios reikšmės (3): ['ABC', 'BAC', 'DAB', 'AAA'];
+                    Unikali kombinacija masyve (AAA): ['ABC', 'ABC', 'ABC', 'AAA'];
+                    </pre>
+                </li>
+                <li>
+                    Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai
+                    100.
+                    Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+
+                </li>
+                <li>
+                    Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 4 uždavinio masyve, bet
+                    nėra
+                    antrame 4 uždavinio masyve.
+
+                </li>
+                <li>
+                    Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 4 uždavinio masyvuose.
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_1()" type="button" name="vardas" value="ND 2022-12-09 Nr.1">
+                <div id="dn1209_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_2()" type="button" name="vardas" value="ND 2022-12-09 Nr.2">
+                <div id="dn1209_2" style="padding-left: 20px;"></div>
+            </div>
+
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_3()" type="button" name="vardas" value="ND 2022-12-09 Nr.3">
+                <div id="dn1209_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_3ab()" type="button" name="vardas" value="ND 2022-12-09 Nr.3ab">
+                <div id="dn1209_3ab" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_4()" type="button" name="vardas" value="ND 2022-12-09 Nr.4">
+                <div id="dn1209_4" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_5()" type="button" name="vardas" value="ND 2022-12-09 Nr.5">
+                <div id="dn1209_5" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1209_6()" type="button" name="vardas" value="ND 2022-12-09 Nr.6">
+                <div id="dn1209_6" style="padding-left: 20px;"></div>
+            </div>
+
+        </div>
+
+        <div style="background-color:antiquewhite;">
+            <h1>Užduotis 2022-12-08</h1>
+            <ol>
+                <li>
+                    Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį
+                    nuo
+                    5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo
+                    vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222
+                    taškus.
+                    Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+                </li>
+                <li>
+                    Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies
+                    ilgis
+                    8.5cm (pilnai sulenda į lentą).
+                    <pre>
+                    a) “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+                    b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+    
+                </pre>
+                </li>
+                <li>
+                    Sugeneruokite stringą, kurį sudarytų 50 atsitiktinių skaičių nuo 1 iki 200, atskirtų tarpais.
+                    Skaičiai
+                    turi būti unikalūs (t.y. nesikartoti). Sugeneruokite antrą stringą, pasinaudodami pirmu, palikdami
+                    jame
+                    tik pirminius skaičius (t.y tokius, kurie dalinasi be liekanos tik iš 1 ir patys savęs). Skaičius
+                    stringe sudėliokite didėjimo tvarka, nuo mažiausio iki didžiausio.
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1208_1()" type="button" name="vardas" value="ND 2022-12-08 Nr.1">
+                <div id="dn1208_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1208_2()" type="button" name="vardas" value="ND 2022-12-08 Nr.2">
+                <div id="dn1208_2" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1208_2b()" type="button" name="vardas" value="ND 2022-12-08 Nr.2b">
+                <div id="dn1208_2b" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1208_3()" type="button" name="vardas" value="ND 2022-12-08 Nr.3">
+                <div id="dn1208_3" style="padding-left: 20px;"></div>
+            </div>
+
+        </div>
+
+        <div class="container" style="background-color: rgb(240, 240, 170);">
+            <h1>Užduotis 2022-12-06</h1>
+            <ol>
+                <li>
+                    Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas
+                    ekrane
+                    atrodytų kvadratinis.
+                    <pre>
+            * * * * * * * * * * *
+            * * * * * * * * * * *
+            * * * * * * * * * * *
+            * * * * * * * * * * *
+            * * * * * * * * * * *
+            * * * * * * * * * * *
+            * * * * * * * * * * *
+        </pre>
+                </li>
+                <li>
+                    Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines.
+                </li>
+                <li>
+                    Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius.
+                    Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H”
+                    jeigu
+                    herbas. Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+                    <pre>
+                Iškritus herbui;
+                Tris kartus iškritus herbui;
+                Tris kartus iš eilės iškritus herbui;
+            </pre>
+                </li>
+                <li>
+                    Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai
+                    skaičiai
+                    nuo 5 iki 25.
+                </li>
+                <li>
+                    Naudodamiesi 4 uždavinio masyvu:
+                    <pre>
+               a) Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+                b) Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+                c) Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+                d) Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+                e) Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+               
+                f) Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+                g) Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+                h) Iš masyvo ištrinkite visus elementus, kurių reikšmė didesnė už 10;
+            
+            </pre>
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_1()" type="button" name="vardas" value="ND 2022-12-06 Nr.1, 2">
+                <div id="dn1206_1" style="padding-left: 20px;"></div>
+            </div>
+            <!-- <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_2()" type="button" name="vardas" value="ND 2022-12-06 Nr.2">
+                <div id="dn1206_2" style="padding-left: 20px;"></div>
+            </div> -->
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_3()" type="button" name="vardas" value="ND 2022-12-06 Nr.3">
+                <div id="dn1206_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_3b()" type="button" name="vardas" value="ND 2022-12-06 Nr.3b">
+                <div id="dn1206_3b" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_3c()" type="button" name="vardas" value="ND 2022-12-06 Nr.3c">
+                <div id="dn1206_3c" style="padding-left: 20px;"></div>
+            </div>
+
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_4()" type="button" name="vardas" value="ND 2022-12-06 Nr.4">
+                <div id="dn1206_4" style="padding-left: 20px;"></div>
+            </div>
+
+
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_5()" type="button" name="vardas" value="ND 2022-12-06 Nr.5a..c">
+                <div id="dn1206_5" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_5d()" type="button" name="vardas" value="ND 2022-12-06 Nr.5d">
+                <div id="dn1206_5d" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_5e()" type="button" name="vardas" value="ND 2022-12-06 Nr.5e">
+                <div id="dn1206_5e" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_5f()" type="button" name="vardas" value="ND 2022-12-06 Nr.5f">
+                <div id="dn1206_5f" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_5g()" type="button" name="vardas" value="ND 2022-12-06 Nr.5g">
+                <div id="dn1206_5g" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1206_5h()" type="button" name="vardas" value="ND 2022-12-06 Nr.5h">
+                <div id="dn1206_5h" style="padding-left: 20px;"></div>
+            </div>
+
+
+        </div>
+
+        <div class="container" style="background-color: rgb(240, 240, 170);">
+            <h1>Užduotis 2022-12-05</h1>
+            <ol>
+                <li>
+                    Naršyklėje nupieškite linija iš 400 “*”.
+                    Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytųsi ekrane;
+                    Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”;
+                </li>
+                <li>
+                    Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite
+                    atitinkame
+                    h tage. Pvz skaičius 3- rezultatas: ....
+                </li>
+                <li>
+                    Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti
+                    žali, 0 - raudonas, didesni už 0 mėlyni.
+                </li>
+                <li>
+                    Sukurkite kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą
+                    atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir
+                    “It's a
+                    Wonderful Life”.
+                </li>
+                <li>
+                    Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir
+                    suskaičiuokite kiek tarp jų yra didesnių už 150. Skaičiai didesni nei 275 turi būti raudonos
+                    spalvos.
+                </li>
+                <li>
+                    Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos.
+                    Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia,
+                    panaudokite
+                    css, kad visi rezultatai matytųsi ekrane.
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1205_1()" type="button" name="vardas" value="ND 2022-12-05 Nr.1">
+                <div id="dn1205_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1205_2()" type="button" name="vardas" value="ND 2022-12-05 Nr.2">
+                <div id="dn1205_2" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1205_3()" type="button" name="vardas" value="ND 2022-12-05 Nr.3">
+                <div id="dn1205_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1205_4()" type="button" name="vardas" value="ND 2022-12-05 Nr4">
+                <div id="dn1205_4" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1205_5()" type="button" name="vardas" value="ND 2022-12-05 Nr.5">
+                <div id="dn1205_5" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1205_6()" type="button" name="vardas" value="ND 2022-12-05 Nr.6">
+                <div id="dn1205_6" style="padding-left: 20px;"></div>
+            </div>
+        </div>
+
+        <div class=" container" style="background-color: rgb(245, 245, 176);">
+            <h1>Užduotis 2022-12-02</h1>
+            <ol>
+                <li>
+                    Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 %
+                    nuolaida, daugiau kaip
+                    už
+                    2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir
+                    atspausdintų atsakymą
+                    kiek
+                    žvakių ir kokia kaina perkama. Žvakių kiekį generuokite rand() funkcija nuo
+                    5
+                    iki 3000.
+                </li>
+                <li>
+                    Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėmis
+                    reikšmėmis nuo 0 iki 100.
+                    Suskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas
+                    reikšmes, kurios yra
+                    mažesnės
+                    nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus
+                    apvalinkite iki sveiko
+                    skaičiaus.
+                </li>
+                <li>
+                    Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes.
+                    Valandom, minutėm ir
+                    sekundėm
+                    sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki
+                    300.
+                    Tai papildomos
+                    sekundės.
+                    Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš
+                    ir
+                    po sekundžių
+                    pridėjimo ir
+                    pridedamų sekundžių skaičių.
+                </li>
+                <li>
+                    Šiame kanale 14:00 turėsime bendrą skambutį rezultatams aptarti. Sėkmės! :)
+                </li>
+                <li>
+                    <pre>
+                     function rand(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                }
+                </pre>
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1202_1()" type="button" name="vardas" value="ND 2022-12-02 Nr.1">
+                <div id="dn1202_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input type="button" onclick="fnND_1202_2()" value="ND 2022-12-02 Nr.2 xxx">
+                <div id="dn1202_2" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1202_3()" type="button" name="vardas" value="ND 2022-12-02 Nr.3">
+                <div id="dn1202_3" style="padding-left: 20px;"></div>
+            </div>
+        </div>
+        <!-- <div class="container" id="rez" style="background-color: rgb(142, 245, 116); z-index: 2;">
+            <input type="button" id="print" value="Sprendimas">
+        </div> -->
+
+        <div class="container" style="background-color: rgb(248, 248, 188);">
+            <h1>Užduotis 2022-12-01</h1>
+            <ol>
+                <li>
+                    Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. Sukurkite du kintamuosius ir
+                    naudodamiesi
+                    funkcija jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš
+                    mažesnės.
+                    Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+                </li>
+                <li>
+                    Naudokite funkciją ir sukurkite tris kintamuosius kuriems priskirkite atsitiktines reikšmes
+                    nuo 0
+                    iki
+                    25. Raskite ir atspausdinkite kintamąjį turintį vidurinę reikšmę.
+                </li>
+                <li>
+                    Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip
+                    stringus.
+                    Sukurti
+                    trečią kintamąjį ir jam priskirti stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų
+                    raidžių. Jį
+                    atspausdinti.
+                </li>
+                <li>
+                    Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo
+                    ilgis 3
+                    simboliai.
+                </li>
+            </ol>
+            <h1>Sprendimas:</h1>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1201_1()" type="button" name="vardas" value="ND 2022-12-01 Nr.1">
+                <div id="dn1201_1" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1201_2()" type="button" name="vardas" value="ND 2022-12-01 Nr.2">
+                <div id="dn1201_2" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1201_3()" type="button" name="vardas" value="ND 2022-12-01 Nr.3">
+                <div id="dn1201_3" style="padding-left: 20px;"></div>
+            </div>
+            <div class="container" style="display: flex;">
+                <input onclick="fnND_1201_4()" type="button" name="vardas" value="ND 2022-12-01 Nr.4">
+                <div id="dn1201_4" style="padding-left: 20px;"></div>
+            </div>
+
+
+        </div>
+
+        <div class="container" style="background-color: rgb(180, 255, 180);">
+            <h1>Kintamieji ir sąlygos</h1>
+            <h3>2022-11-30</h3>
+            <p>
+            <ol>
+                <li>
+                    Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip
+                    stringus (Jonas
+                    Jonaitis). Atspausdinti trumpesnį stringą.
+                </li>
+                <li>
+                    Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus
+                    (nebūtinai
+                    tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas
+                    vardo ir
+                    pavardės kintamuosius atspausdintų tokį sakinį : "Aš esu Vardenis Pavardenis. Man yra XX
+                    metai(ų)".
+                </li>
+                <li>
+                    Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip
+                    stringus.
+                    Sukurti
+                    trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės
+                    kintamųjų
+                    raidžių. Jį atspausdinti.
+                </li>
+                <li>
+                    Sukurti kintamąjį su stringu: “Once upon a time in hollywood”. Jame visas “o” (didžiąsias ir
+                    mažąsias)
+                    pakeisti žvaigždutėm “*”. Rezultatą atspausdinti.
+                </li>
+                <li>
+                    Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines reikšmes nuo 0 iki 2.
+                    Suskaičiuokite
+                    kiek yra nulių, vienetų ir dvejetų.
+                </li>
+            </ol>
+            </p>
+            <div>
+                <h1>Sprendimas:</h1>
+                <div class="container" style="display: flex;">
+                    <input onclick="fnND_1130_1()" type="button" name="vardas" value="ND 2022-11-30 Nr.1">
+                    <div id="dn1130_1" style="padding-left: 20px;"></div>
+                </div>
+                <div class="container" style="display: flex;">
+                    <input onclick="fnND_1130_2()" type="button" name="vardas" value="ND 2022-11-30 Nr.2">
+                    <div id="dn1130_2" style="padding-left: 20px;"></div>
+                </div>
+                <div class="container" style="display: flex;">
+                    <input onclick="fnND_1130_3()" type="button" name="vardas" value="ND 2022-11-30 Nr.3">
+                    <div id="dn1130_3" style="padding-left: 20px;"></div>
+                </div>
+                <div class="container" style="display: flex;">
+                    <input onclick="fnND_1130_4()" type="button" name="vardas" value="ND 2022-11-30 Nr.4">
+                    <div id="dn1130_4" style="padding-left: 20px;"></div>
+                </div>
+                <div class="container" style="display: flex;">
+                    <input onclick="fnND_1130_5()" type="button" name="vardas" value="ND 2022-11-30 Nr.5">
+                    <div id="dn1130_5" style="padding-left: 20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="20221220.js"></script>
+</body>
+
+</html>

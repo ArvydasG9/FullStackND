@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND 20221202</title>
+
+</head>
+
+<body>
+    <div class="container" style="background-color: rgb(245, 245, 176);">
+        <h1>Užduotis</h1>
+        <ol>
+            <li>
+                Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už
+                2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek
+                žvakių ir kokia kaina perkama. Žvakių kiekį generuokite rand() funkcija nuo 5 iki 3000.
+            </li>
+            <li>
+                Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėmis reikšmėmis nuo 0 iki 100.
+                Suskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės
+                nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus.
+            </li>
+            <li>
+                Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm
+                sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės.
+                Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir
+                pridedamų sekundžių skaičių.
+            </li>
+            <li>
+                Šiame kanale 14:00 turėsime bendrą skambutį rezultatams aptarti. Sėkmės! :)
+            </li>
+            <li>
+                <pre>
+                 function rand(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            </pre>
+            </li>
+        </ol>
+    </div>
+    <div class="container" id="rez" style="background-color: rgb(142, 245, 116); z-index: 2;">
+        <input type="button" id="print" value="Sprendimas">
+    </div>
+
+    <script src="20221202.js"></script>
+</body>
+
+</html>

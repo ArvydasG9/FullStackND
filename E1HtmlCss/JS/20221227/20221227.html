@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND 2022-12-27</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* @media screen and (max-width: 800px) */
+        @media screen and (max-width: 800px) {
+
+            /* body{
+            background-color: red;
+           } */
+            main {
+                border: 2px solid blue;
+            }
+        }
+
+
+
+        main {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /* justify-content:space-between */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        div {
+            flex-basis: 10%;
+            border: 1px solid red;
+            padding: 20px 0;
+        }
+
+        p {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main style="background-color: rgb(255, 255, 220);">
+        <h1>Užduotis 2022-12-27</h1>
+        <h3>(Užduotis video medžiagoje 02:03)</h3>
+        <div class="container"
+            style="background-color: black; color: white; width: 300px; text-align: center; margin-top: 10vh;">
+            <p id="timer">---</p>
+            <form onsubmit="start()">
+                <label for="minutes">Minutės</label>
+                <input type="number" name="minutes" style="width: 70px;">
+                <button>Start</button>
+            </form>
+            <p id="timer_1">--</p>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('input').value = 10;
+        function fnTimeFormat(sek) {
+            let m = Math.floor(sek / 60);
+            let s = sek - m * 60;
+            if (String(m).length == 1) m = '0' + m;
+            if (String(s).length == 1) s = '0' + s;
+            if (s <= 3) return m + ':' + '<span style="color: red">' + s + '</span>';
+            else return m + ':' + s;
+        }
+        function fnTimer_1() {
+            tm_1++;
+            let m = Math.floor(tm_1 / 60);
+            let s = tm_1 - m * 60;
+            if (String(m).length == 1) m = '0' + m;
+            if (String(s).length == 1) s = '0' + s;
+            if (s >= 57) res = m + ':' + '<span style="color: red">' + s + '</span>';
+            else res = m + ':' + s;
+            document.querySelector('#timer_1').innerHTML = res;
+            if (tm == 0) stop();
+        }
+        function fnTimer() {
+            tm--;
+            let m = Math.floor(tm / 60);
+            let s = tm - m * 60;
+            if (String(m).length == 1) m = '0' + m;
+            if (String(s).length == 1) s = '0' + s;
+            let res;
+            if (s <= 3 && s > 0) res = m + ':' + '<span style="color: red">' + s + '</span>';
+            else res = m + ':' + s;
+            document.querySelector('#timer').innerHTML = res;
+        }
+        let intervalStart;
+        let intervalStart_1;
+        let tm;
+        let tm_1 = 0;
+        function start() {
+            event.preventDefault();
+            tm = document.querySelector('[name="minutes"]').value;
+            tm *= 60;
+            intervalStart = setInterval(fnTimer, 1000);
+            intervalStart_1 = setInterval(fnTimer_1, 1000);
+            document.querySelector('button').remove;
+            document.querySelector('input').remove;
+            document.querySelector('label').remove;
+            document.querySelector('button').textContent = 'Stop';
+            document.querySelector('form').removeAttribute('onsubmit');
+        }
+        function stop() {
+            clearInterval(intervalStart);
+            clearInterval(intervalStart_1);
+        }
+    </script>
+</body>
+
+</html>

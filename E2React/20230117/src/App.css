@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+header,
+footer {
+    background-color: #555;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    height: 75px;
+    padding: 10px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    border: 5px solid blue;
+    padding: 20px;
+    border-radius: 3%;
+    margin: 5px;
+    align-items: center;
+    margin: auto;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin: 25px;
+}
+
+main {
+    margin: 0 5%;
+}
+
+p {
+    text-align: center;
+}

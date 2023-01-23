@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND 2023-01-06</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #555;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            height: 75px;
+            padding: 10px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin: 25px;
+        }
+
+        main {
+            margin: 0 5%;
+        }
+
+        .tbl {
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        table {
+            border: 5px solid blue;
+            background-color: aqua;
+        }
+
+        div p {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(230, 255, 255);">
+    <header>Kepurė</header>
+    <main>
+        <div class="container" style="background-color: rgb(255, 255, 220);">
+            <h1>Užduotis 2023-01-06</h1>
+            <h4>Tarpinis OOP uždavinys</h4>
+            <pre>
+                Sukurti klasę Vaisius, kuris turi:
+                savybę dydis rand 5 - 25;
+                savybę id rand 1000000 - 9999999
+                savybę prakastas false
+                Sukurti metodą prakasti(), kuris savybe prakastas keistų į true.
+                Sukurti klasę Krepšys, kuri turi statinę savybe vaisiai, kuri
+                yra masyvas.
+                Klasėje Krepšys sukurkite statinį metodą pripildyti(),
+                kuris savybę vaisiai užpildytų 20-timi Vaisius objektų ir
+                išrūšiuotų juos pagal vaisiaus dydį nuo didžiausio iki
+                mažiausio.
+                Klasėje Krepšys sukurti statinį metodą isimti(), kuris iš
+                vaisiai masyvo išimtų (ištrintų iš masyvo) pirmą (didžiausią)
+                vaisių ir jį grąžintų. Išėmus tarkim kelis vaisius ir vėl
+                paleidus metodą papildyti(), jis turi padaryti tai ką sako
+                metodo pavadinimas- papildyti iki pilno (20 elementų), o ne
+                perrašyti visus vaisius iš naujo (tai galima stebėti pagal
+                vaisių id).
+                Išorėje (globale) sukurti kintamąjį grauztukai kuris yra Map
+                tipo objektas. Iš krepšelio išimti vaisiai turi būti pridedami į
+                šį objektą. Kaip raiktus naudoti Vaisius objekto id savybę.
+                Prieš patalpinant vaisių į grauztukai objektą, vaisius turi būti
+                “prakąstas”, Vaisius objekte paleidžiant prakasti() metodą            
+            </pre>
+            <hr />
+        </div>
+
+        <div class="container" style="background-color: rgb(139, 248, 97); padding-bottom: 50px;">
+            <h2>Sprendimas:</h2>
+            <div style="font-size: large; font-weight: bold;">
+                <button class="btn btn-primary" onclick="fnAdd()">Pripildyti</button>
+                <button class="btn btn-danger" onclick="fnUsed()">Išimti</button>
+                <div class="tbl">
+                    <div class="row g-3 container">
+                        <table class="table table-sm">
+                            <thead>
+                                <th>ID</th>
+                                <th>Dydis</th>
+                                <th>Prakastas</th>
+                            </thead>
+                            <tbody id="t1">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row g-3 container">
+                        <p style="background-color: rgb(247, 227, 138); color: red;"></p>
+                        <table class="table table-sm">
+                            <thead>
+                                <th>ID</th>
+                                <th>Dydis</th>
+                                <th>Prakastas</th>
+                            </thead>
+                            <tbody id="t2">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>Batai</footer>
+
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let grauztukai = [];
+
+        class Vaisius {
+            // constructor(size) {
+            //     let max = 0;
+            //     if (Krepsys.vaisiai.length != 0) max = Math.max.apply(Math, Krepsys.vaisiai.map((o) => o.id));
+            //     this.id = max + 1;
+            //     this.dydis = size;
+            //     this.prakastas = false;
+            // }
+
+            constructor() {
+                let max = 0;
+                if (Krepsys.vaisiai.length != 0) max = Math.max.apply(Math, Krepsys.vaisiai.map((o) => o.id));
+                this.id;
+                this.dydis;
+                this.prakastas;
+            }
+
+            setVaisius(size) {
+                let max = 0;
+                if (Krepsys.vaisiai.length != 0) max = Math.max.apply(Math, Krepsys.vaisiai.map((o) => o.id));
+                this.id = max + 1;
+                this.dydis = size;
+                this.prakastas = false;
+                // return;
+            }
+
+            prakasti(obj) {
+                obj.prakastas = true;
+                grauztukai.push(obj);
+            }
+        }
+
+        class Krepsys {
+            static vaisiai = [];
+            static pripildyti() {
+                while (this.vaisiai.length < 20) {//užpild 20 obj (vaisiai = [];) ir išrūšiuoti nuo max iki min dydžio
+                    const fruit = new Vaisius();
+                    fruit.setVaisius(rand(5, 25));
+                    this.vaisiai.push(fruit);
+                }
+                this.vaisiai.sort((v1, v2) => v2.dydis - v1.dydis);
+                console.log(Krepsys.vaisiai);
+                document.querySelector('div p').style.display = 'none';
+            }
+
+            static isimti() {
+                //iš (vasiai = []) ištrinti max vaisiu (jį parodyti)
+                //, paleidziant prakasti(id), 
+
+                // console.log(this.vaisiai[0]);
+                // alert('Išimtas vaisius. ID: ' + this.vaisiai[0].id + ', dydis: ' + this.vaisiai[0].dydis);               
+                document.querySelector('div p').style.display = 'block';
+                document.querySelector('div p').textContent = 'Išimtas vaisius. ID: ' + this.vaisiai[0].id + ', dydis: ' + this.vaisiai[0].dydis;
+
+                const niam = new Vaisius();
+                niam.prakasti(this.vaisiai[0]);
+                this.vaisiai.shift();
+            }
+
+        }
+
+        function fnAdd() {
+            Krepsys.pripildyti();
+            fnViewGood();
+        }
+
+        function fnUsed() {
+            Krepsys.isimti();
+            fnViewGood();
+            fnViewBad()
+        }
+
+        function fnViewGood() {
+            let addTag = '';
+            if (Krepsys.vaisiai.length > 0) {
+                Krepsys.vaisiai.map((vaisiai) => {
+                    addTag += `<tr>
+                    <td>${vaisiai.id}</td>
+                    <td>${vaisiai.dydis}</td>
+                    <td>${vaisiai.prakastas}</td> `
+                })
+            }
+            document.querySelector('#t1').innerHTML = addTag;
+        }
+
+        function fnViewBad() {
+            let addTag = '';
+            if (grauztukai.length > 0) {
+                grauztukai.map((grauztukai) => {
+                    addTag += `<tr>
+                    <td>${grauztukai.id}</td>
+                    <td>${grauztukai.dydis}</td>
+                    <td>${grauztukai.prakastas}</td> `
+                })
+            }
+            document.querySelector('#t2').innerHTML = addTag;
+        }
+
+    </script>
+
+</body>
+
+</html>

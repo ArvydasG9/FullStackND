@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namų darbas 2022-11-15</title>
+    <style>
+        .kurjeris {
+            display: block;
+            align-content: center;
+            border: 1px solid rgb(234, 234, 234);
+            padding: 2px 10px;
+            width: 30%;
+            height: 250px;
+            float: left;
+            margin: 10px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .kurjeris img {
+            margin: 8px 0;
+            /* width: 100px; */
+        }
+
+        .kurjeris input {
+            margin-top: 10px;
+        }
+
+        span {
+            color: red;
+        }
+
+        .rw::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        input,
+        select,
+        label {
+            font-size: large;
+        }
+
+        /* div {
+            border: 1px solid red;
+        } */
+        .veza {
+            display: inline-flex;
+        }
+
+        .pradzia {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pradzia">
+        <h1>Užduotis:</h1>
+        <p>Pasinaudodami CSS ir HTML žiniomis pabandykite sukurti ir stilizuoti užsakymo formą pagal pateiktą maketą.
+        </p>
+        <h2>Užduoties sprendimas:</h2>
+    </div>
+    <div style="background-color: rgb(245, 245, 245);  height: 650px;">
+        <h3>Pristatymas į paštomatus</h3>
+        <hr />
+
+        <form>
+            <div class="rw veza">
+                <div class="kurjeris">
+
+                    <input type="radio" id="LPexpres" name="veza">
+
+                    <br /><img style="width: 100px; background-color: #fd0;"
+                        src="https://lpexpress.lt/assets/images/svg/logo.svg" alt="LPexpresLOG" />
+                    <h3>Atsiėmimas LP EXPRESS paštomate</h3>
+                    <p>2-4 darbo dienos</p>
+                    <h3>1,99 &euro;</h3>
+                </div>
+                <div class="kurjeris">
+
+                    <input type="radio" id="Omniva" name="veza">
+
+                    <br /><img style="width: 100px;"
+                        src="https://www.siusk24.lt/uploads/ckeditor/pictures/20/content_omniva-logo.png"
+                        alt="LPexpresLOG" />
+                    <h3>Atsiėmimas Omniva paštomate</h3>
+                    <p>2-4 darbo dienos</p>
+                    <h3>1,99 &euro;</h3>
+                </div>
+                <div class="kurjeris">
+
+                    <input type="radio" id="DPD" name="veza">
+
+                    <br /><img style="width: 100px; background-color: #fd0;"
+                        src="data:image/png;base64,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"
+                        alt="LPexpresLOG" />
+                    <h3>Atsiėmimas paštomate</h3>
+                    <p>2-4 darbo dienos</p>
+                    <h3>1,99 &euro;</h3>
+                </div>
+            </div>
+
+            <div class="rw">
+                <h3>Pasirinkite pristatymo vietą</h3>
+                <div style="width:40%; display: block;  float: left;">
+                    <label>Miestas<span>*</span></label>
+                    <br />
+                    <select style="width: 80%;" required>
+                        <option value="Garliava">Garliava</option>
+                        <option value="Kaunas">Kaunas</option>
+                        <option value="Vilnius">Vilnius</option>
+                        <option value="Klaipėda">Klaipėda</option>
+                    </select>
+                </div>
+
+                <div style="width:40%; display: block;  float: right;">
+                    <label>Paštomato adresas (paštomatas)<span>*</span></label>
+                    <br />
+                    <select style="width: 80%;" required>
+                        <option value="Garliava">IKI Garliava (Vytauto g. 67)</option>
+                        <option value="Kaunas">Kaunas post</option>
+                        <option value="Vilnius">Vilnius post</option>
+                        <option value="Klaipėda">Klaipėda post</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="rw">
+                <h3>Pateikite gavėjo duomenis</h3>
+                <div style="width: 40%; display: block;  float: left;">
+                    <label>Vardas<span>*</span></label>
+                    <br /><input style="width: 80%;" type="text" value="Vardenis"">
+                </div>
+                <div style=" width: 40%; display: block; float: right;">
+                    <label>Pavardė<span>*</span></label>
+                    <br /><input style="width: 80%;" type="text" value="Pavardenis">
+                </div>
+            </div>
+
+            <div class="rw">
+                <div style="width: 40%; margin-top: 20px;">
+                    <label>Mobilaus telefono numeris<span>*</span></label>
+                    <br /><input style="width: 80%;" type="tel" value="+37060012345">
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+</body>
+
+</html>

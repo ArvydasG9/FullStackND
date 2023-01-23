@@ -1,0 +1,9 @@
+node -v Komanda pasitikrinti ar veikia Node.js
+node xxx.js -> paleidžia xxx.js faila terminale
+npx create-react-app .
+npx create-react-app . Vietoj taško galima nurodyti direktorijos vardą, kuri bus sukurta
+npm start
+npm run build
+npm test
+npm run eject
+Ctrl+C Serverio uždarymas 

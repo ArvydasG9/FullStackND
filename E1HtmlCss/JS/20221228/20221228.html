@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND 2022-12-28</title>
+    <style>
+        .boxBig {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            display: flex;
+            position: relative;
+            /* align-items: center; */
+        }
+
+        .boxSmall {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        } */
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container" style="background-color: rgb(255, 255, 220);">
+            <h1>Užduotis 2022-12-28</h1>
+            <pre>
+                Sukurkite žaidimą.
+                Žaidimą žaidžia du žaidėjai: Player(Jūs) ir Kompiuteris. 
+                Žaidimą sudaro 10 raundų, vieno raundo trukmė 30 sekundžių. 
+                Raundą laimi tas žaidėjas kuris surenka daugiau taškų.
+                Kiekvieno raundo pabaigoje atvaizduokite laimėtojo vardą, surinktus taškus raunde ir visus laimėtus roundus prie žaidėjų vardų.
+                Žaidimo esmė:
+                Puslapyje atvaizduojamas kvadratas(50px x 50px) kuris keičia savo atsitiktinę poziciją bei savo fono spalvą kas 1 sekundę. 
+                Jeigu žaidėjas spėja per šį laiko tarpą paspausti ant kvadrato - taškas skiriamas jam. Priešingu atveju laimi kompiuteris.
+                Kiekviename rounde naršyklėje atvaizduokite laikmatį skaičiuojantį roundo trukmę. 
+                Pasibaigus žaidimui atvaizduokite laimėtojo vardą bei mygtuką, ant kurio paspaudus žaidimas būtų pradedamas iš naujo.
+            </pre>
+            <hr />
+        </div>
+        <div class="container" style="background-color: rgb(139, 248, 97); padding-bottom: 50px;">
+            <h2>Sprendimas:</h2>
+
+            <div style="font-size: large; font-weight: bold; width: 400px;">
+                <p id="player">Player</p>
+                <p id="pc">PC</p>
+                <p id="round">Round:</p>
+                <p id="time">Time:</p>
+                <p id="win" style="display: none;">winner:</p>
+                <button onclick="fnStart()">Start</button>
+            </div>
+            <div class="boxBig">
+                <!-- <button onclick="fnStart()" style="position: absolute; top:-20px; width: 80%;">Start</button> -->
+                <div id="apskr"
+                    style="background-color: blue; width: 20px; height: 20px; display: flex; position: absolute; top:50px; left:50px; border-radius: 50%;">
+                    +
+                </div>
+                <div class="boxSmall" onclick="fnPointPl()"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let game = 0;
+        let point = false;
+        let pointsPl = 0;
+        let pointsPc = 0;
+        let pointsPl_r = 0;
+        let pointsPc_r = 0;
+        let totalPlay = ' = ';
+        let totalPC = ' = ';
+
+        const box = document.querySelector('.boxSmall').style;
+        function fnMove() {
+            box.cssText = `top: ${rand(0, 350)}px; left: ${rand(0, 350)}px; background-color: rgb(${rand(75, 255)}, ${rand(75, 255)}, ${rand(75, 255)});`;
+            if (time === 0) {
+                fnStop();
+                let win;
+                totalPlay += ` + [${game}]${pointsPl_r}`;
+                totalPC += ` + [${game}]${pointsPc_r}`;
+
+                document.querySelector('#player').textContent = 'Player: ' + pointsPl + totalPlay;
+                document.querySelector('#pc').textContent = 'PC: ' + pointsPc + totalPC;
+                document.querySelector('#time').textContent = 'Time: ' + time + ' s'
+
+                if (game < 10) {
+                    document.querySelector('button').style.cssText = 'display: center'
+                    if (pointsPl_r === pointsPc_r) win = 'Raunde iygiosios Player: ' + pointsPl_r + '; PC: ' + pointsPc_r;
+                    else if (pointsPl_r > pointsPc_r) win = 'Raundą laimėjo Player: ' + pointsPl_r + '; PC: ' + pointsPc_r;
+                    else if (pointsPl_r < pointsPc_r) win = 'Raundą laimėjo PC : ' + pointsPc_r + '; Player: ' + pointsPl_r;
+                }
+                else if (pointsPl === pointsPc) win = 'Lygiosios'
+                else if (pointsPl > pointsPc) win = 'Žaidimą laimėjo Player: ' + pointsPl;
+                else if (pointsPl < pointsPc) win = 'Žaidimą laimėjo PC: ' + pointsPc;
+                document.querySelector('#win').textContent = win;
+                document.querySelector('#win').style.cssText = 'display: center'
+                return;
+            }
+            if (point) {
+                pointsPl_r++;
+                pointsPl++;
+                point = false;
+            }
+            else {
+                pointsPc_r++;
+                pointsPc++;
+                fnBeep(500);
+            }
+
+            document.querySelector('#player').textContent = 'Player: ' + pointsPl + totalPlay + ` + [${game}]${pointsPl_r}`;
+            document.querySelector('#pc').textContent = 'PC: ' + pointsPc + totalPC + ` + [${game}]${pointsPc_r}`;
+            document.querySelector('#time').textContent = 'Time: ' + time + ' s'
+            time--;
+        }
+
+        function fnPointPl() {
+            point = true;
+            if (time != 0) fnBeep(fnBeep(900));// ----------------- PLUS BEEP----
+        }
+
+        let intervalStart;
+        let time;
+
+        function fnStart() {
+            event.preventDefault();
+            game++;
+            time = 30;
+            pointsPl_r = 0;
+            pointsPc_r = 0;
+            document.querySelector('button').style.cssText = 'display: none';
+            document.querySelector('#round').textContent = 'Round: ' + game;
+            document.querySelector('#win').style.cssText = 'display: none'
+            intervalStart = setInterval(fnMove, 1000);
+
+            clearInterval(intervalRound);//-------- Apskr ------------------
+            document.querySelector('#apskr').style.display = 'none';//-------- Apskr ------------------
+        }
+        function fnStop() {
+            clearInterval(intervalStart);
+            intervalRound = setInterval(fnApskr, 1);//-------- Apskr ------------------
+            document.querySelector('#apskr').style.display = 'flex';//-------- Apskr ------------------
+        }
+
+        // ----------------- PLUS ----------------------------
+        function fnBeep(freq) {
+            var context = new AudioContext();
+            var oscillator = context.createOscillator();
+            oscillator.type = "sine";
+            oscillator.frequency.value = freq;//rand(500, 800);//800
+            oscillator.connect(context.destination);
+            oscillator.start();
+            // Beep for 500 milliseconds
+            setTimeout(function () {
+                oscillator.stop();
+            }, 100);
+        }
+
+        let intervalRound = setInterval(fnApskr, 1);//-------- Apskr ------------------
+        let dgr = 0;
+        // setInterval(fnApskr, 1);
+        function fnApskr() {
+            let x;
+            let y;
+            if (dgr === 360) dgr = 1;
+            else dgr++;
+            console.log(dgr)
+            // x = Math.cos(dgr * Math.PI / 180) * 180 + 190;
+            // y = Math.sin(dgr * Math.PI / 180) * 180 + 190;
+            x = Math.cos(dgr * Math.PI / 180) * 180 + 190;
+            y = Math.sin(dgr * Math.PI / 180) * 180 + 190;
+            // x = Math.cos(dgr) * 100 + 100;
+            // y = Math.sin(dgr) * 100 + 100;
+            document.querySelector('#apskr').style.top = y + 'px';
+            document.querySelector('#apskr').style.left = x + 'px';
+        }
+
+    </script>
+</body>
+
+</html>
